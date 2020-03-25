@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>找回密码-安徽省会计管理综合平台</title>
+    <link rel="stylesheet" href="/assets/layui/css/layui.css">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/register.css">
+</head>
+
+<body class="login-bg">
+    <div class="kj-header">
+        <div class="content">
+            <h1>安徽省会计管理综合平台</h1>
+        </div>
+    </div>
+
+    <div class="ky-main">
+        <div class="title">
+            <h2>找回密码</h2>
+        </div>
+
+        <div class="form-wrapper">
+            <form id="subform" action="https://b1be0a37-aa66-4dd6-b23b-a05c9af3775a.mock.pstmn.io/reset_mm"
+                onsubmit="return false;" class="layui-form">
+                <div class="layui-form-item">
+                    <input lay-verify="required" lay-verType="tips" type="text" name="cardId" autocomplete="off"
+                        class="layui-input" placeholder="请输入证件号码">
+                </div>
+                <div class="layui-form-item">
+                    <input lay-verify="required" lay-verType="tips" type="text" name="name" autocomplete="off"
+                        class="layui-input" placeholder="请输入姓名">
+                </div>
+                <div class="layui-form-item">
+                    <input lay-verify="required" lay-verType="tips" type="password" name="password" autocomplete="off"
+                        class="layui-input" placeholder="请输入新密码">
+                </div>
+                <div class="layui-form-item">
+                    <input lay-verify="required" lay-verType="tips" type="password" name="npassword" autocomplete="off"
+                        class="layui-input" placeholder="请再次输入新密码">
+                </div>
+                <div class="layui-form-item">
+                    <input lay-verify="required|phone" lay-verType="tips" type="text" name="phone" autocomplete="off"
+                        class="layui-input" placeholder="请输入手机号码">
+                </div>
+                <div class="layui-form-item" style="position:relative;">
+                    <input type="text" name="yzm" lay-verify="required" lay-verType="tips" placeholder="请输入短信验证码"
+                        autocomplete="off" class="layui-input fl" id="dxyzm">
+                    <button class="yzm-btn fr" id="get-yzm">获取验证码</button>
+                </div>
+
+                <div class="layui-form-item">
+                    <span class="xy-text">密码规则：至少8位，且至少包含数字、大写字母、小写字母、特殊字符（可使用：@$!*?&_~`()
+                        /\-+.^)中的三种类型。</span>
+                </div>
+
+                <div class="msg-wrapper" id="msg-wrap"></div>
+
+                <div class="layui-form-item">
+                    <button class="layui-btn" lay-submit lay-filter="reset-btn">密码重置</button>
+                    <div class="link-btn">
+                        <a href="/pages/login.html">返回登录</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="kj-footer">
+        <div class="content">
+            <p>
+                版权所有：安徽省财政厅&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主办单位：安徽省财政厅<br>
+                地址：合肥市阜南西路238号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮政编码：230061<br>
+                技术支持：聚名科技集团股份有限公司
+            </p>
+        </div>
+    </div>
+
+    <script src="/assets/layui/layui.js"></script>
+    <script>
+        layui.config({
+            version: true,
+            base: '/assets/js/'
+        }).extend({
+            tool: 'tool'
+        }).use(['element', 'form', 'tool'], function () {
+            var $ = layui.jquery,
+                element = layui.element,
+                form = layui.form;
+
+
+            //密码重置
+            form.on('submit(reset-btn)', function (data) {
+                var login_url = data.form.action;
+                var field = data.field;
+
+                $.post(login_url, field, function (res) {
+                    console.log(res);
+                    if (res.code == "1") {
+                        switchMsg("msg-wrap", "success-status", res.msg);
+                        //登录成功2s后跳转其他页面
+                        setTimeout(function () {
+                            location.href = "/pages/login.html";
+                        }, 2000);
+                    } else {
+                        switchMsg("msg-wrap", "error-status", res.msg);
+                        return false;
+                    }
+                });
+            });
+
+
+            //提示框状态切换
+            function switchMsg(el, status, msg) {
+                var msgWrap = $("#" + el);
+                msgWrap.removeClass("error-status");
+                msgWrap.removeClass("success-status");
+                msgWrap.html("<p>" + msg + "</p>").addClass(status);
+            }
+
+            //发送短信验证码
+            $("#get-yzm").on('click', function () {
+                var yzmBtn = $(this);
+                var yzmdis = yzmBtn.attr('disabled');
+                var phone = $("input[name='phone']").val();
+                if (!phone) {
+                    switchMsg("msg-wrap", "error-status", "请输入手机号码");
+                    return false;
+                }
+                if (!regex.isPhone(phone)) {
+                    switchMsg("msg-wrap", "error-status", "请输入正确格式的手机号");
+                    return false;
+                }
+
+                if (!yzmdis) {
+                    $.post('https://b1be0a37-aa66-4dd6-b23b-a05c9af3775a.mock.pstmn.io/get_smsyzm', {
+                        phone: phone
+                    }, function (res) {
+                        console.log(res);
+                        if (res.code === "1") {
+                            yzmBtn.attr('disabled', true).addClass("disabled-btn");
+                            switchMsg("msg-wrap", "success-status", res.msg);
+                            countDown("#get-yzm");
+                        } else {
+                            switchMsg("msg-wrap", "error-status", res.msg);
+                            return false;
+                        }
+                    });
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+@charset "utf-8";
+/*----------- 重置样式 ----------------*/
+html{-webkit-text-size-adjust:none;}
+*html{background-image:url(about:blank); background-attachment:fixed;}/*解决IE6下滚动抖动的问题*/
+*{margin: 0; padding: 0; list-style: none;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;}
+body{padding:0; margin:0; font: 14px/1.5 "Microsoft YaHei",'微软雅黑','黑体','宋体',tahoma,Verdana,arial,sans-serif; color:#333; min-width: 1200px;}
+input,textarea,select,button,label{vertical-align:middle; font-family:"Microsoft YaHei",'微软雅黑';}
+textarea{resize:none;}
+ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,img,a,form,input,label,select{margin:0; padding:0; list-style:none;}
+a{color:#333; text-decoration:none; outline:none; -webkit-transition: all 0.4s; transition: all 0.4s;}
+a:hover{color:#045da6; text-decoration:none; -webkit-transition: all 0.4s; transition: all 0.4s;}
+a img{border:none;}
+.fl{float:left;}
+.fr{float:right;}
+.clear{margin:0; overflow:hidden; visibility:hidden; font-size: 0; content: "."; clear: both; height: 0; padding:0;}
+.clearfix:after{visibility:hidden; display: block; font-size: 0; content:" "; clear:both; height:0;}
+* html .clearfix{zoom: 1;} /* IE6 */
+*:first-child+html .clearfix{zoom: 1;} /* IE7 */
+h1,h2,h3{font-weight: normal;}
+
+.layui-input::-webkit-input-placeholder{
+    color:#aeaeae;
+}
+.layui-input:-moz-placeholder{
+    color:#aeaeae;
+}
+.layui-input::-moz-placeholder{
+    color:#aeaeae;
+}
+.layui-input:-ms-input-placeholder{
+    color:#aeaeae;
+}

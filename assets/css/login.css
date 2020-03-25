@@ -1,0 +1,254 @@
+.login-bg{
+    background-color: #0065c9;
+}
+.kj-header{
+    background-color: #0051a1;
+}
+.kj-header .content{
+    width: 1200px;
+    padding: 40px 0;
+    margin: 0 auto;
+}
+.kj-header .content h1{
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.ky-main{
+    width: 1200px;
+    margin: 40px auto 80px;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.m-pub-figure{
+    width: 722px;
+    height: 672px;
+}
+
+.login-wrapper{
+    width: 478px;
+    height: 672px;
+}
+
+.login-wrapper .layui-tab{
+    margin:0;
+}
+
+.login-wrapper .layui-tab-title{
+    height: 48px;
+}
+.login-wrapper .layui-tab-title li{
+    min-width: 209px;
+    line-height: 48px;
+    font-size: 16px;
+}
+.login-wrapper .layui-tab-title .layui-this:after{
+    height: 49px;
+    border-bottom: 2px solid #0072e4;
+}
+.login-wrapper .layui-tab-title .layui-this {
+    color: #0072e4;
+}
+
+.login-wrapper .layui-tab-content {
+    padding: 40px 68px 0;
+}
+.login-wrapper .layui-form-item{
+    margin-bottom: 18px;
+}
+.login-wrapper .layui-input{
+    height: 42px;
+    padding-left: 40px;
+    border-radius: 4px;
+}
+.login-wrapper input[name="cardId"]{
+    background: url(../img/login-input-icons.png) no-repeat 10px 13px;
+}
+.login-wrapper input[name="name"]{
+    background: url(../img/login-input-icons.png) no-repeat 10px -50px;
+}
+.login-wrapper input[name="password"]{
+    background: url(../img/login-input-icons.png) no-repeat 10px -112px;
+}
+.login-wrapper input[name="yzm"]{
+    width: 230px;
+    background: url(../img/login-input-icons.png) no-repeat 10px -173px;
+}
+.login-wrapper input[name="phone"]{
+    background: url(../img/login-input-icons.png) no-repeat 10px -239px;
+}
+
+.login-wrapper .layui-form-checked[lay-skin=primary] i{
+    border-color: #0072e4!important;
+    background-color: #0072e4;
+}
+.yzm-img{
+    width: 100px;
+    height: 42px;
+    cursor: pointer;
+}
+.yzm-btn{
+    width: 100px;
+    height: 42px;
+    cursor: pointer;
+    background-color: #0072e4;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+}
+.disabled-btn{
+    background-color: #ddd;
+    color: #666;
+    cursor: not-allowed;
+}
+.xy-text{
+    width: 313px;
+    line-height: 24px;
+    padding-top: 7px;
+    font-size: 12px;
+    color: #333;
+}
+
+.login-wrapper .layui-btn{
+    width: 100%;
+    height: 42px;
+    background-color: #0072e4;
+    border-radius: 4px;
+}
+
+.other-btn{
+    padding: 0 68px;
+    text-align: right;
+    color: #0072e4;
+}
+.other-btn a{
+    color: #0072e4;
+    padding: 0 8px;
+}
+
+.thirdparty-wrapper{
+    margin-top: 30px;
+    padding: 0 68px;
+}
+.thirdparty-wrapper .title{
+    position: relative;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+.thirdparty-wrapper .title hr{
+    height: 1px;
+    width: 100%;
+    margin: 0;
+    background-color: #d4d4d4;
+}
+.thirdparty-wrapper .title h2{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -56px;
+    width: 112px;
+    height: 21px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #fff;
+    color: #999999;
+    font-size: 12px;
+}
+
+.thirdparty-content{
+    width: 100%;
+    overflow: hidden;
+}
+.thirdparty-content li{
+    float: left;
+    width: 33.3%;
+}
+.thirdparty-content li a{
+    display: block;
+    width: 44px;
+    padding-top: 46px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    background: url(../img/thirdparty-icons.png) no-repeat;
+}
+.thirdparty-content li.t1 a{
+    background-position: 3px 0;
+}
+.thirdparty-content li.t2 a{
+    background-position: -103px 0;
+}
+.thirdparty-content li.t3 a{
+    background-position: -209px 0;
+}
+
+.msg-wrapper{
+    width: 320px;
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    margin-top: -10px;
+    
+}
+.msg-wrapper p{
+    font-size: 12px;
+    line-height: 30px;
+    padding-left: 45px;
+}
+.error-status{
+    height: 30px;
+    color: #ed4040;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.error-status p{
+    background: url(../img/error-icon.png) no-repeat 20px 7px #feefef;
+}
+
+.success-status{
+    height: 30px;
+    color: #01cf97;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.success-status p{
+    background: url(../img/success-icon.png) no-repeat 20px 7px #e0fbf4;
+}
+
+
+
+
+
+
+
+
+
+
+
+.kj-footer{
+    width: 100%;
+    background-color: #fff;
+}
+.kj-footer .content{
+    width: 500px;
+    padding: 30px 0;
+    margin: 0 auto;
+    background: url(../img/jgdw-icon.png) no-repeat 10px center;
+}
+.kj-footer .content p{
+    padding-left: 145px;
+    line-height: 28px;
+    font-size: 12px;
+    color: #999;
+}
