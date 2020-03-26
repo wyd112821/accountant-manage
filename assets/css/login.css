@@ -74,7 +74,7 @@
 .login-wrapper input[name="password"]{
     background: url(../img/login-input-icons.png) no-repeat 10px -112px;
 }
-.login-wrapper input[name="yzm"]{
+.login-wrapper input[name="txyzm"], .login-wrapper input[name="dxyzm"]{
     width: 230px;
     background: url(../img/login-input-icons.png) no-repeat 10px -173px;
 }

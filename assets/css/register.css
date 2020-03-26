@@ -55,7 +55,7 @@
     padding-left: 40px;
     border-radius: 4px;
 }
-.form-wrapper input[name="cardId"]{
+.form-wrapper input[name="cardId"], .form-wrapper .layui-form-select .layui-unselect{
     background: url(../img/login-input-icons.png) no-repeat 10px 13px;
 }
 .form-wrapper input[name="name"]{
@@ -64,7 +64,7 @@
 .form-wrapper input[name="password"], .form-wrapper input[name="npassword"]{
     background: url(../img/login-input-icons.png) no-repeat 10px -112px;
 }
-.form-wrapper input[name="yzm"]{
+.form-wrapper input[name="txyzm"], .form-wrapper input[name="dxyzm"]{
     width: 406px;
     background: url(../img/login-input-icons.png) no-repeat 10px -173px;
 }
@@ -91,6 +91,10 @@
     padding: 10px 0;
     font-size: 12px;
     color: #333;
+}
+.xy-text-w{
+    width: 490px;
+    padding-top: 8px;
 }
 
 .form-wrapper .layui-btn{
@@ -149,6 +153,50 @@
 .success-status p{
     background: url(../img/success-icon.png) no-repeat 20px 7px #e0fbf4;
 }
+
+.hint-wrapper{
+    width: 618px;
+    height: 60px;
+    line-height: 60px;
+    margin: 40px auto 0;
+    border: 1px solid #decf92;
+    border-radius: 4px;
+    background: url(../img/hint-icon.png) no-repeat 110px center #fcf7e3;
+    text-indent: 140px;
+    color: #333;
+}
+
+.register-pt30{
+    padding-top: 30px;
+}
+
+.success-reg{
+    width: 480px !important;
+    height: 400px !important;
+    border-radius: 10px !important;
+}
+.success-reg p{
+    padding: 70px 0 60px;
+    text-align: center;
+    font-size: 16px;
+}
+.success-reg p img{
+    display: block;
+    margin: 0 auto 20px;
+}
+.success-reg .layui-btn{
+    display: block;
+    width: 300px;
+    height: 42px;
+    line-height: 42px;
+    background-color: #0072e4;
+    margin: 0 auto;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+
 
 
 .kj-footer{
